@@ -1,0 +1,10 @@
+@import './globals.scss';
+
+header {
+  height: $header-height;
+}
+
+main {
+  height: calc(100vh - #{$header-height});
+  display: flex;
+}

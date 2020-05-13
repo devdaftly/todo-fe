@@ -1,0 +1,27 @@
+@import  '../../../../globals.scss';
+
+.menu {
+  width: 256px;
+  flex: 0 0 auto;
+  transition: ease-in-out 250ms;
+  background-color: $background;
+  box-shadow: $box-shadow;
+  z-index: 9;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.collapse {
+  width: 48px;
+}
+
+.menu-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.toggle-button-row {
+  align-items: center;
+  justify-content: flex-end;
+}

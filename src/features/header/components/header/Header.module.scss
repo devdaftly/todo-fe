@@ -1,0 +1,10 @@
+@import '../../../../globals.scss';
+
+.header {
+  display: block;
+  background-color: $background;
+  height: $header-height;
+  box-shadow: $box-shadow;
+  z-index: 10;
+  position: relative;
+}

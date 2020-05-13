@@ -1,0 +1,34 @@
+@import '../../globals.scss';
+
+$smBase: 0.875em;
+$medBase: 1em;
+$lgBase: 1.3333333333em;
+
+@mixin icon-size($baseSize) {
+  width: $baseSize;
+  height: $baseSize;
+  padding: $baseSize / 2;
+  margin: $baseSize / 2;
+  border-radius: $baseSize;
+}
+
+.IconButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $primary;
+
+  &:hover {
+    background-color: transparentize($white, .85);
+  }
+
+  &.sm {
+    @include icon-size($smBase);
+  }
+  &.med {
+    @include icon-size($medBase);
+  }
+  &.lg {
+    @include icon-size($lgBase);
+  }
+}
