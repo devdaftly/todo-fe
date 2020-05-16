@@ -10,13 +10,13 @@ let cx = classNames.bind(styles);
 interface IconButtonProps {
   icon: IconProp;
   size?: 'sm' | 'med' | 'lg';
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const IconButton: React.FunctionComponent<IconButtonProps> = ({
   icon,
   size = 'med',
-  onClick
+  onClick = () => {}
 }) => {
   let className = cx({
     IconButton: true,

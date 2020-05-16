@@ -1,27 +1,58 @@
 @import  '../../../../globals.scss';
 
+$menuWidthExpanded: 256px;
+$menuWidthCollapsed: 48px;
+
+$tranTime: 250ms;
+
 .menu {
-  width: 256px;
+  width: $menuWidthExpanded;
   flex: 0 0 auto;
   transition: ease-in-out 250ms;
-  background-color: $background;
-  box-shadow: $box-shadow;
-  z-index: 9;
-  position: relative;
+  background-color: $bgDark;
   display: flex;
   flex-direction: column;
-}
+  position: relative;
+  padding: $menuWidthCollapsed .75em 0;
+  overflow-x: hidden;
 
-.collapse {
-  width: 48px;
-}
+  .toggle-btn-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 
-.menu-row {
-  display: flex;
-  flex-direction: row;
-}
+  .menu-list-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: .25em;
+    border-radius: 0.5em;
 
-.toggle-button-row {
-  align-items: center;
-  justify-content: flex-end;
+    &:hover {
+      background-color: $bgLightest;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .menu-row-title {
+      width: 100%;
+      margin: auto 0;
+      transition: opacity ease-in-out $tranTime;
+    }
+  }
+
+  &.collapse {
+    width: $menuWidthCollapsed;
+    padding: $menuWidthCollapsed 0 0;
+
+    .menu-list-row:hover {
+      background-color: initial;
+    }
+
+    .menu-row-title {
+      opacity: 0;
+    }
+  }
 }

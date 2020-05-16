@@ -6,7 +6,24 @@ import {
 } from './types';
 
 const initialState: MenuState = {
-  menuCollapsed: false
+  menuCollapsed: false,
+  todoLists: [
+    {
+      key: 0,
+      title: 'Inbox',
+      icon: 'inbox',
+    },
+    {
+      key: 1,
+      title: 'Today',
+      icon: 'calendar',
+    },
+    {
+      key: 2,
+      title: 'Upcoming',
+      icon: 'calendar-alt',
+    }
+  ]
 };
 
 export function menuReducer(

@@ -17,9 +17,13 @@ $lgBase: 1.3333333333em;
   justify-content: center;
   align-items: center;
   color: $primary;
+  cursor: pointer;
+  flex-shrink: 0;
+  flex-grow: 0;
 
   &:hover {
-    background-color: transparentize($white, .85);
+    // background-color: transparentize($white, .85);
+    background-color: $bgLightest;
   }
 
   &.sm {

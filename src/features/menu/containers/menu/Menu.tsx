@@ -31,19 +31,32 @@ class Menu extends React.Component<MenuProps> {
         menu: true,
         collapse: this.props.state.menuCollapsed
       })}>
-        <div className='menu-row toggle-button-row'>
+        <div className='toggle-btn-container'>
           <IconButton
             icon={this.props.state.menuCollapsed ? 'bars' : 'chevron-left'}
             size='med'
             onClick={this.toggleMenu}
           />
         </div>
+        {this.props.state.todoLists.map(list => (
+          <div className="menu-row menu-list-row" key={list.key}>
+            {list.icon &&
+              <IconButton
+                icon={list.icon as any}
+                size='med'
+              />
+            }
+            <span className="menu-row-title">{ list.title }</span>
+          </div>
+        ))}
       </div>
     );
   }
 }
 
 const mapStateToProps = (state: AppState) => ({
+  // TODO: Should split this up into viewModel or individual props
+  // TODO: Should also use a selector (preferably an Observable) instead of directly accessing (i think)
   state: state.menu
 });
 

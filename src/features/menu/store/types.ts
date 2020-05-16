@@ -1,6 +1,11 @@
 // Menu's slice of state
 export interface MenuState {
   menuCollapsed: boolean;
+  todoLists: {
+    key: number;
+    title: string;
+    icon?: string;
+  }[];
 }
 
 // Menu's available ACTION NAMES
